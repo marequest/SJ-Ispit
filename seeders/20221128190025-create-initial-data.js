@@ -16,27 +16,27 @@ module.exports = {
     await queryInterface.bulkInsert('Users', [
       {
         name: "Marko",
-        password: "$2b$10$2.aD3XXi7HH7v4Fgr1x2h.I30WFV1ZyI9D6t4Y7wLijgWjOhO19py",
+        password: "$2a$10$iqdww9rt3eSsk3CMLJMoFuSgQd9OjHTfK75hJ1lhCVEAfskzeZ/om",
         admin: true,
         email: "marequest123@gmail.com"
       },{
         name: "Nikola",
-        password: "$2b$10$2.aD3XXi7HH7v4Fgr1x2h.I30WFV1ZyI9D6t4Y7wLijgWjOhO19py",
+        password: "$2a$10$iqdww9rt3eSsk3CMLJMoFuSgQd9OjHTfK75hJ1lhCVEAfskzeZ/om",
         admin: false,
         email: "nikolan@gmail.com"
       },{
         name: "Sara",
-        password: "$2b$10$2.aD3XXi7HH7v4Fgr1x2h.I30WFV1ZyI9D6t4Y7wLijgWjOhO19py",
+        password: "$2a$10$iqdww9rt3eSsk3CMLJMoFuSgQd9OjHTfK75hJ1lhCVEAfskzeZ/om",
         admin: true,
         email: "saras@gmail.com"
       },{
         name: "Anja",
-        password: "$2b$10$2.aD3XXi7HH7v4Fgr1x2h.I30WFV1ZyI9D6t4Y7wLijgWjOhO19py",
+        password: "$2a$10$iqdww9rt3eSsk3CMLJMoFuSgQd9OjHTfK75hJ1lhCVEAfskzeZ/om",
         admin: false,
         email: "anjaa@gmail.com"
       },{
         name: "Petar",
-        password: "$2b$10$2.aD3XXi7HH7v4Fgr1x2h.I30WFV1ZyI9D6t4Y7wLijgWjOhO19py",
+        password: "$2a$10$iqdww9rt3eSsk3CMLJMoFuSgQd9OjHTfK75hJ1lhCVEAfskzeZ/om",
         admin: true,
         email: "petarp@gmail.com"
       }

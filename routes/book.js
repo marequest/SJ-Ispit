@@ -2,10 +2,13 @@ const express = require("express");
 const { sequelize, Books } = require("../models");
 const path = require("path");
 const {bookSchema} = require("../schemas/book-schema");
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const route = express.Router();
 route.use(express.static(path.join(__dirname, 'static')));
 
 module.exports = route;
+
 
 route.get("/", async (req, res) => {
     try{
@@ -70,6 +73,7 @@ route.put("/:id", async (req, res) => {
         }
 
         book.title = req.body.title;
+        book.categoryId = req.body.categoryId;
         await book.save();
         res.send(book);
 

@@ -3,12 +3,26 @@ const { sequelize, Users } = require('./models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+const http = require('http');
+const { Server } = require("socket.io");
 require('dotenv').config();
+const history = require("connect-history-api-fallback")
 
 const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server, {
+    cors: {
+        origin: 'https://biblioteka-auth.onrender.com',
+        methods: ['GET', 'POST'],
+        credentials: true
+    },
+    allowEIO3: true
+});
+
 
 var corsOptions = {
-    origin: 'http://127.0.0.1:8000',
+    origin: 'https://biblioteka-auth.onrender.com',
     optionsSuccessStatus: 200
 }
 
@@ -37,7 +51,7 @@ app.post('/register', (req, res) => {
 
 app.post('/login', (req, res) => {
 
-    Users.findOne({ where: { email: req.body.name } })
+    Users.findOne({ where: { name: req.body.name } })
         .then( usr => {
             if (bcrypt.compareSync(req.body.password, usr.password)) {
                 const obj = {
@@ -55,6 +69,28 @@ app.post('/login', (req, res) => {
         });
 });
 
-app.listen({ port: 9000 }, async () => {
+function authSocket(msg, next) {
+    console.log("authSocket")
+    if (msg[1].token == null) {
+        next(new Error("Not authenticated"));
+    } else {
+        jwt.verify(msg[1].token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+            if (err) {
+                next(new Error(err));
+            } else {
+                msg[1].user = user;
+                next();
+            }
+        });
+    }
+}
+
+io.on('connection', socket => {
+    socket.use(authSocket);
+
+    socket.on('error', err => socket.emit('error', err.message) );
+});
+
+server.listen({ port: 9000 }, async () => {
     await sequelize.authenticate();
 });

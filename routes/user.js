@@ -74,6 +74,7 @@ route.put("/:id", async (req, res) => {
     try{
         let checkUser = {
             name: req.body.name,
+            password: req.body.password,
             admin: req.body.admin,
             email: req.body.email
         }
@@ -85,6 +86,7 @@ route.put("/:id", async (req, res) => {
 
         let user = await Users.findByPk( req.body.id );
         user.name = req.body.name;
+        user.password = req.body.password;
         user.admin = req.body.admin;
         user.email = req.body.email;
         await user.save();
@@ -100,6 +102,7 @@ route.post("/dodaj", async (req, res) => {
     try{
         let checkUser = {
             name: req.body.name,
+            password: req.body.password,
             admin: req.body.admin,
             email: req.body.email
         }

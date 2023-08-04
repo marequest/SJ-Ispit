@@ -108,7 +108,7 @@ route.post("/dodaj", async (req, res) => {
         let checkHolds = {
             start_time: req.body.start_time,
             end_time: req.body.end_time,
-            book_id: req.body.book_copy_id,
+            book_id: req.body.book_id,
             patron_id: req.body.patron_id
         }
         const validate = holdSchema.validate(checkHolds);
