@@ -10,7 +10,7 @@ const history = require("connect-history-api-fallback")
 
 const {sequelize} = require("./models");
 var corsOptions = {
-    "origin": "https://biblioteka-rest.onrender.com",
+    "origin": "*",
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
     "preflightContinue": false,
     "optionsSuccessStatus": 204
@@ -19,7 +19,7 @@ var corsOptions = {
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://biblioteka-rest.onrender.com',
+        origin: '*',
         methods: ['GET', 'POST'],
         credentials: true
     },

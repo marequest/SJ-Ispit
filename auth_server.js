@@ -13,7 +13,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: 'https://biblioteka-auth.onrender.com',
+        origin: '*',
         methods: ['GET', 'POST'],
         credentials: true
     },
@@ -22,7 +22,7 @@ const io = new Server(server, {
 
 
 var corsOptions = {
-    origin: 'https://biblioteka-auth.onrender.com',
+    origin: '*',
     optionsSuccessStatus: 200
 }
 
