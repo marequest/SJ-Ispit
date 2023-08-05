@@ -55,11 +55,11 @@ app.use("/categories", categoriesRoutes);
 app.use("/bookcopies", bookcopiesRoutes);
 app.use("/bookauthors", bookauthorsRoutes);
 
-const staticMdl = express.static(path.join(__dirname, 'dist'))
-
-app.use(staticMdl);
-app.use(history({ index: '/index.html'}));
-app.use(staticMdl);
+// const staticMdl = express.static(path.join(__dirname, 'dist'))
+//
+// app.use(staticMdl);
+// app.use(history({ index: '/index.html'}));
+// app.use(staticMdl);
 
 server.listen({ port: 8080 }, async () => {
     await sequelize.authenticate();
