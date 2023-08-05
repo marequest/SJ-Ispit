@@ -1,26 +1,10 @@
 {
   "development": {
-    "username": "bibliotekadb_user",
-    "password": "v1vqHfmfdY0MOe8OlurdTqRFhGHMydkP",
-    "database": "bibliotekadb",
-    "host": "dpg-cj5ntsicn0vc73dr7c80-a.frankfurt-postgres.render.com",
-    "url": "postgres://bibliotekadb_user:v1vqHfmfdY0MOe8OlurdTqRFhGHMydkP@dpg-cj5ntsicn0vc73dr7c80-a.frankfurt-postgres.render.com/bibliotekadb",
-    "port": 5432,
-    "dialect": "postgres",
-    "sl1": true,
-    "dialectOptions": {
-      "ssl": {
-        "require": true,
-        "rejectUnauthorized": false
-      }
-    }
-  },
-  "production": {
-    "username": "bibliotekadb_user",
-    "password": "v1vqHfmfdY0MOe8OlurdTqRFhGHMydkP",
-    "database": "bibliotekadb",
-    "host": "dpg-cj5ntsicn0vc73dr7c80-a.frankfurt-postgres.render.com",
-    "url": "postgres://bibliotekadb_user:v1vqHfmfdY0MOe8OlurdTqRFhGHMydkP@dpg-cj5ntsicn0vc73dr7c80-a/bibliotekadb",
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "url": "",
     "port": 5432,
     "dialect": "postgres",
     "sl1": true,
