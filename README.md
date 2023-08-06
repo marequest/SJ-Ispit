@@ -13,6 +13,7 @@ Dist folder contains vue.js frontend which communicates with rest_server.js, res
   - Joi
 - Frontend
   - Vue.js
+  - Vue Store
   - Vue Bootstrap
 
 > Racunarski fakultet, computer science
