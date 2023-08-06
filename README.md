@@ -1,7 +1,6 @@
 # Final project for Script Languages subject.
 
-## Live at: https://biblioteka-app-l2ee.onrender.com 
-(May take a bit to load)
+## Live at: https://biblioteka-app-l2ee.onrender.com <sub>(May take a bit to load)<sub>
 
 This web app is Content Management System for Library
 
